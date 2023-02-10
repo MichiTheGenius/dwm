@@ -4,6 +4,7 @@ This is my fork of the suckless window manager [dwm](https://dwm.suckless.org/).
 ## Usage
 - clone the repo to your home directory
 ```sh
+git clone https://github.com/MichiTheGenius/dwm.git ~/
 ```
 - cd into the dwm directory and compile dwm in order to use it 
 ```sh
