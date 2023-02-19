@@ -6,7 +6,7 @@
 #include "themes/catppuccin.h"
 
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 3;        /* gaps between windows */
+static const unsigned int gappx     = 4;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -31,13 +31,13 @@ static const char *colors[][3]      = {
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
     [SchemeNorm] = { gray, black, black },
-	[SchemeSel]  = { gray, black,  sky  },
+	[SchemeSel]  = { gray, black,  gray  },
 };
 
 
 /* tagging */
 //static const char *tags[] = { "", "", "", "", "" };
-static const char *tags[] = { "1", "2", "3", "4", "5", "6" };
+static const char *tags[] = { "", "", "", "", "5", "6" };
 
 static const char *tagsel[][2] = {
     /* foreground, background */
@@ -90,12 +90,14 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[]  = { "firefox", NULL };
 static const char *pcmanfm[]  = { "pcmanfm", NULL };
 static const char *thunar[]   = { "thunar", NULL };
+static const char *nemo[]     = { "nemo", NULL };
 static const char *rofi[]     = { "rofi", "-show", "run", NULL };
+static const char *emacs[]    = { "emacsclient", "-c", NULL };
 static const char *power_menu[]  = { "rofi", "-show", "power-menu", "-modi", "power-menu:rofi-power-menu", NULL };
 
 /* volume */
-static const char *upvol[] = { "/usr/bin/amixer", "set", "Master", "2%+", NULL };
-static const char *downvol[] = { "/usr/bin/amixer", "set", "Master", "2%-", NULL };
+static const char *upvol[] = { "/usr/bin/amixer", "set", "Master", "5%+", NULL };
+static const char *downvol[] = { "/usr/bin/amixer", "set", "Master", "5%-", NULL };
 static const char *mutevol[] = { "/usr/bin/amixer", "set", "Master", "toggle", NULL };
 
 /* brightness */
@@ -109,7 +111,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = rofi } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browser} },
-	{ MODKEY,                       XK_e,      spawn,          {.v = thunar} },
+	{ MODKEY,                       XK_e,      spawn,          {.v = pcmanfm} },
+	{ MODKEY,                       XK_c,      spawn,          {.v = emacs} },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = power_menu} },
 	{ 0     ,       XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol} },
 	{ 0     ,       XF86XK_AudioLowerVolume,   spawn,          {.v = downvol} },
