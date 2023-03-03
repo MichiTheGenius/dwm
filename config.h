@@ -3,7 +3,8 @@
 /* appearance */
 #include <X11/XF86keysym.h>
 #include "movestack.c"
-#include "themes/catppuccin.h"
+#include "themes/catppuccin-mocha.h"
+//#include "themes/catppuccin-latte.h"
 
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 4;        /* gaps between windows */
@@ -27,11 +28,11 @@ static const char *colors[][3]      = {
 };
 */
 
-/* catppuccin theme */
+/* catppuccin latte theme */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
     [SchemeNorm] = { gray, black, black },
-	[SchemeSel]  = { gray, black,  gray  },
+	[SchemeSel]  = { gray, black, gray },
 };
 
 
@@ -112,7 +113,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = rofi } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browser} },
-	{ MODKEY,                       XK_e,      spawn,          {.v = pcmanfm} },
+	{ MODKEY,                       XK_e,      spawn,          {.v = nemo} },
 	{ MODKEY,                       XK_c,      spawn,          {.v = emacs} },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = power_menu} },
 	{ 0     ,       XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol} },
